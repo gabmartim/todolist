@@ -1,7 +1,5 @@
 package br.com.gabrielmartim.todolist.user;
-import jakarta.persistence.Id;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
 import jakarta.persistence.Id;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -19,8 +17,7 @@ public class UserModel {
     @Id
     @GeneratedValue(generator = "UUID")
     private UUID id;
-
-
+    @Column(unique = true)
     private String username;
     private String name;
     private String password;
